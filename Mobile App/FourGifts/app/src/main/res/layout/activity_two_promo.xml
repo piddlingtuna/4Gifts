@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TwoPromoActivity">
+
+    <ImageView
+        android:id="@+id/tutorial3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="294dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="Would you like to add your payment details now to receive $2 to donate to a charity of your choice?"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tutorial3"
+        app:layout_constraintEnd_toEndOf="@+id/tutorial3"
+        app:layout_constraintStart_toStartOf="@+id/tutorial3"
+        app:layout_constraintTop_toTopOf="@+id/tutorial3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_skip"
+            android:layout_width="144dp"
+            android:layout_height="56dp"
+            android:backgroundTint="#FFFFFF"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Skip"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <Button
+            android:id="@+id/button_deal"
+            android:layout_width="144dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Deal"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
