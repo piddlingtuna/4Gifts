@@ -3,13 +3,13 @@ from numpy import exp, array, random, dot
 class NeuralNetwork():
     def __init__(self):
         random.seed(42)
-        self.synaptic_weights = 2 * random.random((4, 1)) - 1
+        self.weights = 2 * random.random((4, 1)) - 1
 
     def __sigmoid(self, x):
         return 1 / (1 + exp(-x))
 
     def __sigmoid_derivative(self, x):
-        return x * (1 - x)
+        return x * (1 - x)        
 
     def train(self, training_inputs, training_outputs, training_iterations):
         for i in range(len(training_inputs)):
@@ -21,10 +21,10 @@ class NeuralNetwork():
             output = self.think(training_inputs)
             error = training_outputs - output
             adjustment = dot(training_inputs.T, error * self.__sigmoid_derivative(output))
-            self.synaptic_weights += adjustment
+            self.weights += adjustment
 
     def think(self, inputs):
-        return self.__sigmoid(dot(inputs, self.synaptic_weights))
+        return self.__sigmoid(dot(inputs, self.weights))
 
 if __name__ == "__main__":
 
@@ -46,18 +46,18 @@ if __name__ == "__main__":
     print("Marcus")
     marcus_network = NeuralNetwork()
 
-    print("Random starting synaptic weights: ")
-    print(marcus_network.synaptic_weights)
+    print("Starting weights: ")
+    print(marcus_network.weights)
 
     marcus_network.train(marcus_inputs, marcus_outputs, 10000)
-    print("New synaptic weights after training: ")
-    print(marcus_network.synaptic_weights)
+    print("New weights: ")
+    print(marcus_network.weights)
 
-    print("Considering new situation [35, 10, 2, 600]: ")
+    print("Considering [35, 10, 2, 600]: ")
     print(int(marcus_network.think(array([35, 10, 2, 600]))))
-    print("Considering new situation [37, -95, 10, 2000]: ")
+    print("Considering [37, -95, 10, 2000]: ")
     print(int(marcus_network.think(array([37, -95, 10, 2000]))))
-    print("Considering new situation [61, 101, 200, 6000]: ")
+    print("Considering [61, 101, 200, 6000]: ")
     print(int(marcus_network.think(array([61, 101, 200, 6000]))))
 
     # Eric
@@ -68,16 +68,16 @@ if __name__ == "__main__":
     print("Eric")
     eric_network = NeuralNetwork()
 
-    print("Random starting synaptic weights: ")
-    print(eric_network.synaptic_weights)
+    print("Starting weights: ")
+    print(eric_network.weights)
 
     eric_network.train(eric_inputs, eric_outputs, 10000)
-    print("New synaptic weights after training: ")
-    print(eric_network.synaptic_weights)
+    print("New weights: ")
+    print(eric_network.weights)
 
-    print("Considering new situation [7.0, 80.0, 2, 600]: ")
+    print("Considering [7.0, 80.0, 2, 600]: ")
     print(int(eric_network.think(array([7.0, 80.0, 2, 60]))))
-    print("Considering new situation [-27, 121, 200, 6000]: ")
+    print("Considering [-27, 121, 200, 6000]: ")
     print(int(eric_network.think(array([-27, 121, 200, 6000]))))
-    print("Considering new situation [7.0, 90.0, 12, 2000]: ")
+    print("Considering [7.0, 90.0, 12, 2000]: ")
     print(int(eric_network.think(array([7.0, 80.0, 12, 20]))))
