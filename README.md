@@ -9,7 +9,7 @@ As a charity donation mobile platform, it aims to primarily target the following
 3. Goal 4: Quality Education
 4. Goal 5: Gender Equality
 
-; though the results of the project is adaptable to nearly every SDG.
+Note: the results of the project is adaptable to nearly every SDG.
 
 ## Mobile App/FourGifts
 
@@ -19,6 +19,6 @@ The design for the app was produced based on the interactive wireframe accessibl
 
 ## network.py, charities.txt, charities.xlsx
 
-The Python script, network.py keeps track of the user's previous donations to determine the best four charity projects to display to a user.
+The Python script, network.py, is a neural network that tracks a user's previous donations to determine the best four projects to display to a user in order to optimise user engagement and increase donations.
 
-The files, charities.txt and charities.xlsx act as the data set for the Python script.
+The files, charities.txt and charities.xlsx, are a data set to help with the onboarding and validation of charities onto the app.
